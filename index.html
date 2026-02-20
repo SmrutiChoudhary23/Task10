@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard | Professional Edition</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+        <aside class="sidebar">
+            <div class="logo">
+                <span class="logo-icon">🌤️</span>
+                <h2>Weather<span>Dash</span></h2>
+            </div>
+
+            <div class="theme-switch">
+                <button id="themeToggle" class="theme-btn">
+                    <span class="light-icon">☀️</span>
+                    <span class="dark-icon">🌙</span>
+                    <span id="themeText">Light</span>
+                </button>
+            </div>
+
+            <div class="favorites-panel">
+                <h3>⭐ Favorites</h3>
+                <div id="favoritesList" class="favorites-list">
+                    <p class="empty-fav">No favorites yet</p>
+                </div>
+            </div>
+            <div class="status-panel">
+                <div id="connectionStatus" class="status-indicator">● Connecting...</div>
+                <p class="api-source">OpenWeatherMap</p>
+            </div>
+        </aside>
+        <main class="main">
+            <div class="search-container">
+                <input 
+                    type="text" 
+                    id="cityInput" 
+                    placeholder="Enter city name (e.g., London, Tokyo, New York)" 
+                    autocomplete="off"
+                >
+                <button id="searchBtn" class="primary-btn">Search</button>
+                <button id="locationBtn" class="icon-btn" title="Use my location">📍</button>
+            </div>
+            <div id="connectionMessage" class="connection-message"></div>
+            <div id="loading" class="loading hidden">
+                <div class="spinner"></div>
+                <p>Fetching weather data...</p>
+            </div>
+            <div id="errorMessage" class="error hidden"></div>
+            <div id="currentWeather" class="weather-card hidden">
+                <div class="weather-header">
+                    <div>
+                        <h2 id="cityName" class="city-title"></h2>
+                        <p id="weatherDesc" class="weather-desc"></p>
+                    </div>
+                    <button id="favoriteBtn" class="favorite-btn">
+                        <span class="star">☆</span> Add to favorites
+                    </button>
+                </div>
+                <div class="weather-body">
+                    <div class="weather-icon-temp">
+                        <img id="weatherIcon" class="weather-icon" alt="Weather icon">
+                        <div class="temperature">
+                            <span id="temperature"></span>°C
+                        </div>
+                    </div>
+                    <div class="weather-stats">
+                        <div class="stat">
+                            <span class="stat-label">Feels like</span>
+                            <span class="stat-value" id="feelsLike"></span>°C
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Humidity</span>
+                            <span class="stat-value" id="humidity"></span>%
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Wind</span>
+                            <span class="stat-value" id="windSpeed"></span> m/s
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Pressure</span>
+                            <span class="stat-value" id="pressure"></span> hPa
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="forecast" class="forecast hidden">
+                <h3>5-Day Forecast</h3>
+                <div id="forecastContainer" class="forecast-grid"></div>
+            </div>
+        </main>
+    </div>
+    <script type="module" src="app.js"></script>
+</body>
+</html>
