@@ -1,5 +1,6 @@
 # Task10
-# Internship Task 10 – Weather Dashboard: A weather dashboard application that displays current weather and 5-day forecast for any city using the OpenWeatherMap API.
+# Internship Task 10 
+Weather Dashboard: A weather dashboard application that displays current weather and 5-day forecast for any city using the OpenWeatherMap API.
 
 ## Technologies Used
 - HTML5
